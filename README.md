@@ -62,3 +62,7 @@ exists in its platform folder, its `platform` field matches the folder, ids are
 unique, the flat `titles` list matches the per-platform lists, and nothing is
 left at the legacy flat `titles/<id>.json` location. CI runs the same script
 before every publish.
+
+## Development history
+
+Older source and separate candidates are preserved as fixed tags. See [the archive and recovery instructions](docs/BRANCH_ARCHIVE.md).
