@@ -1,0 +1,111 @@
+{
+  "id": "kartia-psx",
+  "name": "Kartia: The Word of Fate",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Kartia: The Word of Fate.",
+  "homepage": "https://github.com/Alexbeav/kartia-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "kartia-recomp",
+  "launch": {
+    "linux": "Kartia_The_Word_of_Fate",
+    "windows": "Kartia_The_Word_of_Fate.exe",
+    "macos": "Kartia_The_Word_of_Fate"
+  },
+  "release": {
+    "github": "Alexbeav/kartia-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/kartia-recomp",
+      "ref": "e4ad3814ce5d6a273b07a6d81e6ce43376a6f8f1"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "d3b9df56"
+    ],
+    "md5": [
+      "674d1dd5c315873f4cd795576ae419eb"
+    ],
+    "sha1": [
+      "803a93070f70d3b7ec172517033329efdad1f4ca"
+    ],
+    "sha256": [
+      "e220c330b1497afa1143fb00cd63186e236c784503aca18827395359ed6a8fbc"
+    ],
+    "disc_serials": [
+      "SLUS-00631"
+    ],
+    "sizes": [
+      531937728
+    ],
+    "filenames": [
+      "Kartia - The Word of Fate (USA).cue",
+      "Kartia - The Word of Fate (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "destruction-derby-raw-psx",
+  "name": "Destruction Derby Raw",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Destruction Derby Raw.",
+  "homepage": "https://github.com/Alexbeav/destruction-derby-raw-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. This disc has audio tracks: bind the CUE so every track is mounted.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "destruction-derby-raw-recomp",
+  "launch": {
+    "linux": "Destruction_Derby_Raw",
+    "windows": "Destruction_Derby_Raw.exe",
+    "macos": "Destruction_Derby_Raw"
+  },
+  "release": {
+    "github": "Alexbeav/destruction-derby-raw-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/destruction-derby-raw-recomp",
+      "ref": "33ab1fb744a1c4fdc48626e2e5dfde17b07667cd"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "96f0a761"
+    ],
+    "md5": [
+      "04fcfee8157a995e7f643ea71e962fe1"
+    ],
+    "sha1": [
+      "131463c47379b9a38888f548a44f43dcc6e7f959"
+    ],
+    "sha256": [
+      "663c82c48f894ce4e6691f9f804597ae8876d0314bf02e092ca2ac8ee4fbe88e"
+    ],
+    "disc_serials": [
+      "SLUS-00912"
+    ],
+    "sizes": [
+      275134608
+    ],
+    "filenames": [
+      "Destruction Derby Raw (USA).cue",
+      "Destruction Derby Raw (USA) (Track 01).bin"
+    ],
+    "track_counts": [
+      13
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "tail-concerto-psx",
+  "name": "Tail Concerto",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Tail Concerto.",
+  "homepage": "https://github.com/Alexbeav/tail-concerto-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. This disc has audio tracks: bind the CUE so every track is mounted.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "tail-concerto-recomp",
+  "launch": {
+    "linux": "Tail_Concerto",
+    "windows": "Tail_Concerto.exe",
+    "macos": "Tail_Concerto"
+  },
+  "release": {
+    "github": "Alexbeav/tail-concerto-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/tail-concerto-recomp",
+      "ref": "65d02d5774721f839cbfa06f4a972f0012289884"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "02d2d3b6"
+    ],
+    "md5": [
+      "bc9c9e0ff03e13b7762aacfda2a82041"
+    ],
+    "sha1": [
+      "d52bc3ff4cfcbbb9ed68d3299596dcd3213b1971"
+    ],
+    "sha256": [
+      "8b1c47bd12a17833b4b8232b9e1cb65b1ae28ebdb2f0fd3d173cc9a6af7759e7"
+    ],
+    "disc_serials": [
+      "SLUS-00660"
+    ],
+    "sizes": [
+      596434272
+    ],
+    "filenames": [
+      "Tail Concerto (USA).cue",
+      "Tail Concerto (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      2
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

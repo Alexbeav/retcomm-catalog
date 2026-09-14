@@ -1,0 +1,111 @@
+{
+  "id": "digimon-world-2-psx",
+  "name": "Digimon World 2",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Digimon World 2.",
+  "homepage": "https://github.com/Alexbeav/digimon-world-2-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "digimon-world-2-recomp",
+  "launch": {
+    "linux": "Digimon_World_2",
+    "windows": "Digimon_World_2.exe",
+    "macos": "Digimon_World_2"
+  },
+  "release": {
+    "github": "Alexbeav/digimon-world-2-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/digimon-world-2-recomp",
+      "ref": "d69bcf91b264687854b689408b45f4e999a0dfff"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "b0cd9681"
+    ],
+    "md5": [
+      "e8ee6810a33c45273800df07628d816b"
+    ],
+    "sha1": [
+      "d9cb009bc0006e901d8ab1365f764ab71da02115"
+    ],
+    "sha256": [
+      "c8c8646d5c137cbd35115f954b97f812e8613c419a651a906962e9e9b48d586a"
+    ],
+    "disc_serials": [
+      "SLUS-01193"
+    ],
+    "sizes": [
+      461993952
+    ],
+    "filenames": [
+      "Digimon World 2 (USA).cue",
+      "Digimon World 2 (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

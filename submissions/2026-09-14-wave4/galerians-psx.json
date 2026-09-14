@@ -1,0 +1,201 @@
+{
+  "id": "galerians-psx",
+  "name": "Galerians",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Galerians.",
+  "homepage": "https://github.com/Alexbeav/galerians-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH5552 (Europe) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. Setup starts with Disc 1; later discs are selected when the game requests them, and disc transitions during play are not qualified by this packet.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "galerians-recomp",
+  "launch": {
+    "linux": "Galerians",
+    "windows": "Galerians.exe",
+    "macos": "Galerians"
+  },
+  "release": {
+    "github": "Alexbeav/galerians-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/galerians-recomp",
+      "ref": "5ca1a0a9e0bbb2139b96b6b89b4a7bdbb07ce221"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "4f8c21f8",
+      "b6b5fe85",
+      "912a15df"
+    ],
+    "md5": [
+      "6ff87c94b34d9371fd57a744b245a74e",
+      "fdc2d4e05af3a9cded3c667c77544fc5",
+      "3a54d9ce02016a20c0dc085b21bf1975"
+    ],
+    "sha1": [
+      "b35fe93b79226fb23f31a4822487d8cbade42d89",
+      "77637261f9b2c61979c0be735fa43dc7a5457512",
+      "3f0656c644b243bf7c9c61bf45d974a2244b170f"
+    ],
+    "sha256": [
+      "d72a3bf69d051fc982abc8c6a2a9bad00acedd6fcef852f395779824f372beda",
+      "e8df91b120e3844639b030d3631839c06c92f2a5c9577b452acbf66da482053b",
+      "794cf4bf0da688a23cca061895daad4e2802d31fdd0c85ff2a46cda06aafd809"
+    ],
+    "disc_serials": [
+      "SLES-02328",
+      "SLES-12328",
+      "SLES-22328"
+    ],
+    "sizes": [
+      683248944,
+      672867216,
+      595923888
+    ],
+    "filenames": [
+      "Galerians (Europe) (Disc 1).cue",
+      "Galerians (Europe) (Disc 1).bin",
+      "Galerians (Europe) (Disc 2).cue",
+      "Galerians (Europe) (Disc 2).bin",
+      "Galerians (Europe) (Disc 3).cue",
+      "Galerians (Europe) (Disc 3).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "discs": [
+      {
+        "index": 1,
+        "serial": "SLES-02328",
+        "cue_name": "Galerians (Europe) (Disc 1).cue",
+        "bin_name": "Galerians (Europe) (Disc 1).bin",
+        "crc32": [
+          "4f8c21f8"
+        ],
+        "md5": [
+          "6ff87c94b34d9371fd57a744b245a74e"
+        ],
+        "sha1": [
+          "b35fe93b79226fb23f31a4822487d8cbade42d89"
+        ],
+        "sha256": [
+          "d72a3bf69d051fc982abc8c6a2a9bad00acedd6fcef852f395779824f372beda"
+        ],
+        "sizes": [
+          683248944
+        ],
+        "track_counts": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "serial": "SLES-12328",
+        "cue_name": "Galerians (Europe) (Disc 2).cue",
+        "bin_name": "Galerians (Europe) (Disc 2).bin",
+        "crc32": [
+          "b6b5fe85"
+        ],
+        "md5": [
+          "fdc2d4e05af3a9cded3c667c77544fc5"
+        ],
+        "sha1": [
+          "77637261f9b2c61979c0be735fa43dc7a5457512"
+        ],
+        "sha256": [
+          "e8df91b120e3844639b030d3631839c06c92f2a5c9577b452acbf66da482053b"
+        ],
+        "sizes": [
+          672867216
+        ],
+        "track_counts": [
+          1
+        ]
+      },
+      {
+        "index": 3,
+        "serial": "SLES-22328",
+        "cue_name": "Galerians (Europe) (Disc 3).cue",
+        "bin_name": "Galerians (Europe) (Disc 3).bin",
+        "crc32": [
+          "912a15df"
+        ],
+        "md5": [
+          "3a54d9ce02016a20c0dc085b21bf1975"
+        ],
+        "sha1": [
+          "3f0656c644b243bf7c9c61bf45d974a2244b170f"
+        ],
+        "sha256": [
+          "794cf4bf0da688a23cca061895daad4e2802d31fdd0c85ff2a46cda06aafd809"
+        ],
+        "sizes": [
+          595923888
+        ],
+        "track_counts": [
+          1
+        ]
+      }
+    ]
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN",
+      "scph5552.bin"
+    ],
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

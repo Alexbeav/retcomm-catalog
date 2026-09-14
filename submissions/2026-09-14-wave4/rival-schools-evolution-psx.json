@@ -1,0 +1,111 @@
+{
+  "id": "rival-schools-evolution-psx",
+  "name": "Rival Schools: Evolution Disc",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Rival Schools: Evolution Disc.",
+  "homepage": "https://github.com/Alexbeav/rival-schools-evolution-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. This is the Evolution Disc program; the Arcade Disc is the separate rival-schools-psx entry. Save carry-over between the two is untested.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "rival-schools-evolution-recomp",
+  "launch": {
+    "linux": "Rival_Schools_Evolution_Disc",
+    "windows": "Rival_Schools_Evolution_Disc.exe",
+    "macos": "Rival_Schools_Evolution_Disc"
+  },
+  "release": {
+    "github": "Alexbeav/rival-schools-evolution-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/rival-schools-evolution-recomp",
+      "ref": "d9238d53bdce61a35e02fcd4adc57690c2598d3b"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "a1134215"
+    ],
+    "md5": [
+      "a7af7e5b80c23fdd08db6b629399dfd7"
+    ],
+    "sha1": [
+      "2bf1af92ed996ebd4d624046496d21567aac39f0"
+    ],
+    "sha256": [
+      "7e9265de0072e66085528d80bcc4dea71423d6e8efd47b2ebd135e25b14a05a3"
+    ],
+    "disc_serials": [
+      "SLUS-00771"
+    ],
+    "sizes": [
+      385655088
+    ],
+    "filenames": [
+      "Rival Schools - United by Fate (USA) (Disc 2) (Evolution Disc).cue",
+      "Rival Schools - United by Fate (USA) (Disc 2) (Evolution Disc).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

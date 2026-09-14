@@ -1,0 +1,111 @@
+{
+  "id": "team-buddies-psx",
+  "name": "Team Buddies",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Team Buddies.",
+  "homepage": "https://github.com/Alexbeav/team-buddies-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH5552 (Europe) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. Automatic BATTLE HILL loading after the story movie and gameplay beyond the menus are unqualified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "team-buddies-recomp",
+  "launch": {
+    "linux": "Team_Buddies",
+    "windows": "Team_Buddies.exe",
+    "macos": "Team_Buddies"
+  },
+  "release": {
+    "github": "Alexbeav/team-buddies-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/team-buddies-recomp",
+      "ref": "79bae1c84219b98277e40d2c71abeab80469885f"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "40ce9451"
+    ],
+    "md5": [
+      "8605d49da65c8306ac92e4b5660eba12"
+    ],
+    "sha1": [
+      "d9c06591a916da6281fb92eaa3f2c083d5b31a5f"
+    ],
+    "sha256": [
+      "e4a941bab9341d824449df8ef8b112350ae0292af0c3bcd9e37c233b3111bcc9"
+    ],
+    "disc_serials": [
+      "SCES-02986"
+    ],
+    "sizes": [
+      717458784
+    ],
+    "filenames": [
+      "Team Buddies (Europe) (En,Es,It).cue",
+      "Team Buddies (Europe) (En,Es,It).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN",
+      "scph5552.bin"
+    ],
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

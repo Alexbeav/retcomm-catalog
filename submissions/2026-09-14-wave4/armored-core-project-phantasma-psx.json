@@ -1,0 +1,111 @@
+{
+  "id": "armored-core-project-phantasma-psx",
+  "name": "Armored Core: Project Phantasma",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Armored Core: Project Phantasma.",
+  "homepage": "https://github.com/Alexbeav/armored-core-project-phantasma-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "armored-core-project-phantasma-recomp",
+  "launch": {
+    "linux": "Armored_Core_Project_Phantasma",
+    "windows": "Armored_Core_Project_Phantasma.exe",
+    "macos": "Armored_Core_Project_Phantasma"
+  },
+  "release": {
+    "github": "Alexbeav/armored-core-project-phantasma-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/armored-core-project-phantasma-recomp",
+      "ref": "5f79ffc1515435a2fd5ae318bad4f0159308f54a"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "aaa1ef9c"
+    ],
+    "md5": [
+      "91badb09339ee7e3b6d235609e8da1be"
+    ],
+    "sha1": [
+      "0d3b5bbf3f860fad1482c242566b2ba890f314e2"
+    ],
+    "sha256": [
+      "1dbedf486a0c529678361c64e9535ca3af71d3c43797d6621a2726f71e26bd0f"
+    ],
+    "disc_serials": [
+      "SLUS-00670"
+    ],
+    "sizes": [
+      454072416
+    ],
+    "filenames": [
+      "Armored Core - Project Phantasma (USA).cue",
+      "Armored Core - Project Phantasma (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

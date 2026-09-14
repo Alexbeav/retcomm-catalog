@@ -1,0 +1,111 @@
+{
+  "id": "wild-arms-psx",
+  "name": "Wild Arms",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Wild Arms.",
+  "homepage": "https://github.com/Alexbeav/wild-arms-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "wild-arms-recomp",
+  "launch": {
+    "linux": "Wild_Arms",
+    "windows": "Wild_Arms.exe",
+    "macos": "Wild_Arms"
+  },
+  "release": {
+    "github": "Alexbeav/wild-arms-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/wild-arms-recomp",
+      "ref": "1fdc64391938487203e2533bfb77d7362c747182"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "53a5248c"
+    ],
+    "md5": [
+      "19f6de83eb8b7525d7bf8eb27566ce30"
+    ],
+    "sha1": [
+      "428a3678e42c0660697bf43643db1aa566f4821b"
+    ],
+    "sha256": [
+      "c5345130e72b1b214c62f708ebb6ca3d2d60727381781ec6b4e1f4bfcf89674e"
+    ],
+    "disc_serials": [
+      "SCUS-94608"
+    ],
+    "sizes": [
+      637163856
+    ],
+    "filenames": [
+      "Wild Arms (USA).cue",
+      "Wild Arms (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

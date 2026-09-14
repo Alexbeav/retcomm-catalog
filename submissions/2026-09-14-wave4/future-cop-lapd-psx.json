@@ -1,0 +1,111 @@
+{
+  "id": "future-cop-lapd-psx",
+  "name": "Future Cop: L.A.P.D.",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Future Cop: L.A.P.D..",
+  "homepage": "https://github.com/Alexbeav/future-cop-lapd-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH5552 (Europe) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "future-cop-lapd-recomp",
+  "launch": {
+    "linux": "Future_Cop_LAPD",
+    "windows": "Future_Cop_LAPD.exe",
+    "macos": "Future_Cop_LAPD"
+  },
+  "release": {
+    "github": "Alexbeav/future-cop-lapd-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/future-cop-lapd-recomp",
+      "ref": "96f1fd0e9cc45a58d0d84535bd3a8199af976c23"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "13e76e37"
+    ],
+    "md5": [
+      "a25a51f497d45f41755d6849da262c19"
+    ],
+    "sha1": [
+      "62791ea95e4e64a94dbe4d86bf49da45de415de0"
+    ],
+    "sha256": [
+      "4fc8a444b7a3a66eecd1a90d680027a9beb1b6e4a2ce0c15d3a68be7a60aff5a"
+    ],
+    "disc_serials": [
+      "SLES-01449"
+    ],
+    "sizes": [
+      673104768
+    ],
+    "filenames": [
+      "Future Cop - L.A.P.D. (Europe) (En,Fr).cue",
+      "Future Cop - L.A.P.D. (Europe) (En,Fr).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN",
+      "scph5552.bin"
+    ],
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

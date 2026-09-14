@@ -1,0 +1,233 @@
+{
+  "id": "fear-effect-2-retro-helix-psx",
+  "name": "Fear Effect 2: Retro Helix",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Fear Effect 2: Retro Helix.",
+  "homepage": "https://github.com/Alexbeav/fear-effect-2-retro-helix-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. Setup starts with Disc 1; later discs are selected when the game requests them, and disc transitions during play are not qualified by this packet.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "fear-effect-2-retro-helix-recomp",
+  "launch": {
+    "linux": "Fear_Effect_2_Retro_Helix",
+    "windows": "Fear_Effect_2_Retro_Helix.exe",
+    "macos": "Fear_Effect_2_Retro_Helix"
+  },
+  "release": {
+    "github": "Alexbeav/fear-effect-2-retro-helix-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/fear-effect-2-retro-helix-recomp",
+      "ref": "4757d9853ab7c5f1ba4769702741bfa0c1030181"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "156bfdb4",
+      "746ad7c9",
+      "fc16649d",
+      "8d9b31eb"
+    ],
+    "md5": [
+      "0258657dd944a139fdddc81345a6d9ee",
+      "74d55be5e2a322a0124efff6fd1f86f2",
+      "5523b1309cbcca233544d9a7b4663543",
+      "7302dbf75f570466e1453b1337fd5a79"
+    ],
+    "sha1": [
+      "86a470f414de3f7af60c06fdc065f4f32015650c",
+      "c80cf3589ef9f05afa19db9a003eeb061ac947e8",
+      "2ea416bcb6692a178dfde0c36df0ac949d488a1f",
+      "1665f4c71e1c399f5a6f4b9c33a979ee0cad8afd"
+    ],
+    "sha256": [
+      "1b7452c2b14bc3ca7b76da4e92ad07af6c598ae2a041401587b66e60acc5b8e3",
+      "c1257a4bbfa4442a6ee354c4265d10b3a6f762bab65fd28a492a863f20e3d53e",
+      "6eede41b82aac6134cc4bc4fba8ac7cfca38b78870065dfb64c5e5e26bd830f5",
+      "0cb468c2c092d556b2ac470d335ab1c04798579b6c58f500e0b30d7d4a300237"
+    ],
+    "disc_serials": [
+      "SLUS-01266",
+      "SLUS-01275",
+      "SLUS-01276",
+      "SLUS-01277"
+    ],
+    "sizes": [
+      746844672,
+      695222976,
+      641439792,
+      715087968
+    ],
+    "filenames": [
+      "Fear Effect 2 - Retro Helix (USA) (Disc 1) (Rev 1).cue",
+      "Fear Effect 2 - Retro Helix (USA) (Disc 1) (Rev 1).bin",
+      "Fear Effect 2 - Retro Helix (USA) (Disc 2) (Rev 1).cue",
+      "Fear Effect 2 - Retro Helix (USA) (Disc 2) (Rev 1).bin",
+      "Fear Effect 2 - Retro Helix (USA) (Disc 3) (Rev 1).cue",
+      "Fear Effect 2 - Retro Helix (USA) (Disc 3) (Rev 1).bin",
+      "Fear Effect 2 - Retro Helix (USA) (Disc 4) (Rev 1).cue",
+      "Fear Effect 2 - Retro Helix (USA) (Disc 4) (Rev 1).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "discs": [
+      {
+        "index": 1,
+        "serial": "SLUS-01266",
+        "cue_name": "Fear Effect 2 - Retro Helix (USA) (Disc 1) (Rev 1).cue",
+        "bin_name": "Fear Effect 2 - Retro Helix (USA) (Disc 1) (Rev 1).bin",
+        "crc32": [
+          "156bfdb4"
+        ],
+        "md5": [
+          "0258657dd944a139fdddc81345a6d9ee"
+        ],
+        "sha1": [
+          "86a470f414de3f7af60c06fdc065f4f32015650c"
+        ],
+        "sha256": [
+          "1b7452c2b14bc3ca7b76da4e92ad07af6c598ae2a041401587b66e60acc5b8e3"
+        ],
+        "sizes": [
+          746844672
+        ],
+        "track_counts": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "serial": "SLUS-01275",
+        "cue_name": "Fear Effect 2 - Retro Helix (USA) (Disc 2) (Rev 1).cue",
+        "bin_name": "Fear Effect 2 - Retro Helix (USA) (Disc 2) (Rev 1).bin",
+        "crc32": [
+          "746ad7c9"
+        ],
+        "md5": [
+          "74d55be5e2a322a0124efff6fd1f86f2"
+        ],
+        "sha1": [
+          "c80cf3589ef9f05afa19db9a003eeb061ac947e8"
+        ],
+        "sha256": [
+          "c1257a4bbfa4442a6ee354c4265d10b3a6f762bab65fd28a492a863f20e3d53e"
+        ],
+        "sizes": [
+          695222976
+        ],
+        "track_counts": [
+          1
+        ]
+      },
+      {
+        "index": 3,
+        "serial": "SLUS-01276",
+        "cue_name": "Fear Effect 2 - Retro Helix (USA) (Disc 3) (Rev 1).cue",
+        "bin_name": "Fear Effect 2 - Retro Helix (USA) (Disc 3) (Rev 1).bin",
+        "crc32": [
+          "fc16649d"
+        ],
+        "md5": [
+          "5523b1309cbcca233544d9a7b4663543"
+        ],
+        "sha1": [
+          "2ea416bcb6692a178dfde0c36df0ac949d488a1f"
+        ],
+        "sha256": [
+          "6eede41b82aac6134cc4bc4fba8ac7cfca38b78870065dfb64c5e5e26bd830f5"
+        ],
+        "sizes": [
+          641439792
+        ],
+        "track_counts": [
+          1
+        ]
+      },
+      {
+        "index": 4,
+        "serial": "SLUS-01277",
+        "cue_name": "Fear Effect 2 - Retro Helix (USA) (Disc 4) (Rev 1).cue",
+        "bin_name": "Fear Effect 2 - Retro Helix (USA) (Disc 4) (Rev 1).bin",
+        "crc32": [
+          "8d9b31eb"
+        ],
+        "md5": [
+          "7302dbf75f570466e1453b1337fd5a79"
+        ],
+        "sha1": [
+          "1665f4c71e1c399f5a6f4b9c33a979ee0cad8afd"
+        ],
+        "sha256": [
+          "0cb468c2c092d556b2ac470d335ab1c04798579b6c58f500e0b30d7d4a300237"
+        ],
+        "sizes": [
+          715087968
+        ],
+        "track_counts": [
+          1
+        ]
+      }
+    ]
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

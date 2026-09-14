@@ -1,0 +1,111 @@
+{
+  "id": "azure-dreams-psx",
+  "name": "Azure Dreams",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Azure Dreams.",
+  "homepage": "https://github.com/Alexbeav/azure-dreams-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "azure-dreams-recomp",
+  "launch": {
+    "linux": "Azure_Dreams",
+    "windows": "Azure_Dreams.exe",
+    "macos": "Azure_Dreams"
+  },
+  "release": {
+    "github": "Alexbeav/azure-dreams-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/azure-dreams-recomp",
+      "ref": "ae54f6e672da42649aa4995bd402c8f54504abfa"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "7b0c5f60"
+    ],
+    "md5": [
+      "9f0afe31a2993af90e43a5ff3139e331"
+    ],
+    "sha1": [
+      "fab68454be5e4e48f7a43ac797cc8c47325c6a20"
+    ],
+    "sha256": [
+      "2d6843c42ca595687b3780e20ab8c8873705ccead5c8bbc0b69d1fa70bc00a90"
+    ],
+    "disc_serials": [
+      "SLUS-00614"
+    ],
+    "sizes": [
+      298576992
+    ],
+    "filenames": [
+      "Azure Dreams (USA).cue",
+      "Azure Dreams (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

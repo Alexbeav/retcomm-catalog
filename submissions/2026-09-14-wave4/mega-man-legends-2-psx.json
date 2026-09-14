@@ -1,0 +1,111 @@
+{
+  "id": "mega-man-legends-2-psx",
+  "name": "Mega Man Legends 2",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Mega Man Legends 2.",
+  "homepage": "https://github.com/Alexbeav/mega-man-legends-2-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH5552 (Europe) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. This disc has audio tracks: bind the CUE so every track is mounted.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "mega-man-legends-2-recomp",
+  "launch": {
+    "linux": "Mega_Man_Legends_2",
+    "windows": "Mega_Man_Legends_2.exe",
+    "macos": "Mega_Man_Legends_2"
+  },
+  "release": {
+    "github": "Alexbeav/mega-man-legends-2-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/mega-man-legends-2-recomp",
+      "ref": "01b162a70f12beacc85c2526e34c7a19177c29bb"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "c8a989e2"
+    ],
+    "md5": [
+      "aa59b0481fae568a4e970b146e1e1422"
+    ],
+    "sha1": [
+      "7deaf00c967c7a45fc1e9778612da970f57ab27a"
+    ],
+    "sha256": [
+      "95f882ac7cc22a2e3ba13e8c084cdcce926cabc5aad707e5c246b82a6127d0f8"
+    ],
+    "disc_serials": [
+      "SLES-03556"
+    ],
+    "sizes": [
+      547380960
+    ],
+    "filenames": [
+      "Mega Man Legends 2 (Europe).cue",
+      "Mega Man Legends 2 (Europe) (Track 1).bin"
+    ],
+    "track_counts": [
+      2
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN",
+      "scph5552.bin"
+    ],
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

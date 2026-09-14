@@ -1,0 +1,169 @@
+{
+  "id": "armored-core-master-of-arena-psx",
+  "name": "Armored Core: Master of Arena",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Armored Core: Master of Arena.",
+  "homepage": "https://github.com/Alexbeav/armored-core-master-of-arena-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. Setup starts with Disc 1; later discs are selected when the game requests them, and disc transitions during play are not qualified by this packet. A seam artifact reported in play testing is under separate investigation.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "armored-core-master-of-arena-recomp",
+  "launch": {
+    "linux": "Armored_Core_Master_of_Arena",
+    "windows": "Armored_Core_Master_of_Arena.exe",
+    "macos": "Armored_Core_Master_of_Arena"
+  },
+  "release": {
+    "github": "Alexbeav/armored-core-master-of-arena-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/armored-core-master-of-arena-recomp",
+      "ref": "d39c6cbae60acb545d52f99ad0b4509cf8ea3d5c"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "446ae06c",
+      "9afeb2c5"
+    ],
+    "md5": [
+      "4d5774c4baa65d6eaf281db59ee8e945",
+      "809f240cfecf2b90ade1322cba61c013"
+    ],
+    "sha1": [
+      "96f5fcc9513ca47b19fd44bd72ee51c65a55cd43",
+      "c9ca14a6f25d663b0aec66df096205b9cb1bc3cc"
+    ],
+    "sha256": [
+      "9e18bb329c8c35555fafbefd2ef370c67fedec164497e5bf9f25c848a97b921e",
+      "40be1b9ac8b66de3866a8d9700a5f053d8e5de2abffbede96b290570147c83e2"
+    ],
+    "disc_serials": [
+      "SLUS-01030",
+      "SLUS-01081"
+    ],
+    "sizes": [
+      700507920,
+      700507920
+    ],
+    "filenames": [
+      "Armored Core - Master of Arena (USA) (Disc 1).cue",
+      "Armored Core - Master of Arena (USA) (Disc 1).bin",
+      "Armored Core - Master of Arena (USA) (Disc 2).cue",
+      "Armored Core - Master of Arena (USA) (Disc 2).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "discs": [
+      {
+        "index": 1,
+        "serial": "SLUS-01030",
+        "cue_name": "Armored Core - Master of Arena (USA) (Disc 1).cue",
+        "bin_name": "Armored Core - Master of Arena (USA) (Disc 1).bin",
+        "crc32": [
+          "446ae06c"
+        ],
+        "md5": [
+          "4d5774c4baa65d6eaf281db59ee8e945"
+        ],
+        "sha1": [
+          "96f5fcc9513ca47b19fd44bd72ee51c65a55cd43"
+        ],
+        "sha256": [
+          "9e18bb329c8c35555fafbefd2ef370c67fedec164497e5bf9f25c848a97b921e"
+        ],
+        "sizes": [
+          700507920
+        ],
+        "track_counts": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "serial": "SLUS-01081",
+        "cue_name": "Armored Core - Master of Arena (USA) (Disc 2).cue",
+        "bin_name": "Armored Core - Master of Arena (USA) (Disc 2).bin",
+        "crc32": [
+          "9afeb2c5"
+        ],
+        "md5": [
+          "809f240cfecf2b90ade1322cba61c013"
+        ],
+        "sha1": [
+          "c9ca14a6f25d663b0aec66df096205b9cb1bc3cc"
+        ],
+        "sha256": [
+          "40be1b9ac8b66de3866a8d9700a5f053d8e5de2abffbede96b290570147c83e2"
+        ],
+        "sizes": [
+          700507920
+        ],
+        "track_counts": [
+          1
+        ]
+      }
+    ]
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

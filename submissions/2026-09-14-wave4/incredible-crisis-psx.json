@@ -1,0 +1,111 @@
+{
+  "id": "incredible-crisis-psx",
+  "name": "Incredible Crisis",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Incredible Crisis.",
+  "homepage": "https://github.com/Alexbeav/incredible-crisis-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH1001 (USA) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "incredible-crisis-recomp",
+  "launch": {
+    "linux": "Incredible_Crisis",
+    "windows": "Incredible_Crisis.exe",
+    "macos": "Incredible_Crisis"
+  },
+  "release": {
+    "github": "Alexbeav/incredible-crisis-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/incredible-crisis-recomp",
+      "ref": "1dba6057ceff844faaaf21d5952a449ddc2d1aa2"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "9f87357b"
+    ],
+    "md5": [
+      "4d51e2807dface60c09b3f10558b3b95"
+    ],
+    "sha1": [
+      "024fc3ec2309809406b2663b753bf5c4f505cd5b"
+    ],
+    "sha256": [
+      "763ac391c05c7ed23c236518f7d7be2654a47d08df99829b05573f5ca19ff1ba"
+    ],
+    "disc_serials": [
+      "SLUS-01225"
+    ],
+    "sizes": [
+      721377216
+    ],
+    "filenames": [
+      "Incredible Crisis (USA).cue",
+      "Incredible Crisis (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN",
+      "scph1001.bin"
+    ],
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

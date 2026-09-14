@@ -1,0 +1,111 @@
+{
+  "id": "dragon-ball-z-ultimate-battle-22-psx",
+  "name": "Dragon Ball Z: Ultimate Battle 22",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Dragon Ball Z: Ultimate Battle 22.",
+  "homepage": "https://github.com/Alexbeav/dragon-ball-z-ultimate-battle-22-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH5552 (Europe) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "dragon-ball-z-ultimate-battle-22-recomp",
+  "launch": {
+    "linux": "Dragon_Ball_Z_Ultimate_Battle_22",
+    "windows": "Dragon_Ball_Z_Ultimate_Battle_22.exe",
+    "macos": "Dragon_Ball_Z_Ultimate_Battle_22"
+  },
+  "release": {
+    "github": "Alexbeav/dragon-ball-z-ultimate-battle-22-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/dragon-ball-z-ultimate-battle-22-recomp",
+      "ref": "35c1a67fa2bfe85d2b4e24a0375dc9265f9a9af7"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "92a3adf5"
+    ],
+    "md5": [
+      "ddb7a6e3d9f9dda0e5295576e7d95d8b"
+    ],
+    "sha1": [
+      "2bc030896e91290407f9f80446197a7e5e3eebca"
+    ],
+    "sha256": [
+      "43fba2715157da08f5732735cad666b2e849c69418fe2c538af99b41b57e75dd"
+    ],
+    "disc_serials": [
+      "SLES-03736"
+    ],
+    "sizes": [
+      335562192
+    ],
+    "filenames": [
+      "Dragon Ball Z - Ultimate Battle 22 (Europe).cue",
+      "Dragon Ball Z - Ultimate Battle 22 (Europe).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN",
+      "scph5552.bin"
+    ],
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}

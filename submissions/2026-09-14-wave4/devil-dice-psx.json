@@ -1,0 +1,111 @@
+{
+  "id": "devil-dice-psx",
+  "name": "Devil Dice",
+  "kind": "recomp",
+  "platform": "psx",
+  "description": "A recompilation setup kit for Devil Dice.",
+  "homepage": "https://github.com/Alexbeav/devil-dice-recomp",
+  "author_notes": "Supply the complete listed Redump CUE/BIN set and your own SCPH5552 (Europe) BIOS dump; the kit itself also accepts a CHD of the same dump, but Retro matches CUE/BIN only. First-run setup generates and compiles the game on your machine and also builds a diagnostic variant: create an empty diagnostic-mode.txt next to the setup executable (or run it with --diagnostic) to use it, and --collect-diagnostics zips the runtime's report files for a GitHub issue. Netplay is not qualified. Native Linux and macOS owned-input setup and gameplay remain unverified. This disc has audio tracks: bind the CUE so every track is mounted.",
+  "notes": "Wave 4 v0.1.0 owned-input setup release. Source fallback is pinned to the exact public commit that produced the release assets. Windows: exact-package clean-extract setup, generation, compilation and headless start checks passed on the release pin; play testing of the private builds this kit derives from is recorded in the title README. Native Linux/macOS owned-input setup and gameplay remain unverified. The single macos glob matches both the arm64 and the x64 setup zip.",
+  "install_dir_name": "devil-dice-recomp",
+  "launch": {
+    "linux": "Devil_Dice",
+    "windows": "Devil_Dice.exe",
+    "macos": "Devil_Dice"
+  },
+  "release": {
+    "github": "Alexbeav/devil-dice-recomp",
+    "asset_glob": {
+      "linux": "*linux-x64.zip",
+      "macos": "*macos-*.zip",
+      "windows": "*windows-x64.zip"
+    }
+  },
+  "build": {
+    "enabled": true,
+    "source": {
+      "github": "Alexbeav/devil-dice-recomp",
+      "ref": "b793120b4ec5f5a8c0d353f8489570c3afb13876"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "github": "RetroPortingToolKit/RetroPorting-Toolchains",
+      "asset_glob": {
+        "linux": "*cmake-clang-v1*linux*",
+        "macos": "*cmake-clang-v1*macos*",
+        "windows": "*cmake-clang-v1*windows*"
+      },
+      "min_version": "1.0.3"
+    }
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin"
+  ],
+  "rom_identity": {
+    "crc32": [
+      "2c65bf7a"
+    ],
+    "md5": [
+      "d4d0bf3469319d4f07cd2e2a4bf94e5d"
+    ],
+    "sha1": [
+      "73caf9f72ee957e4146c4bf0feba664945d6aa41"
+    ],
+    "sha256": [
+      "97229826876d6f4e957fab5c42ff39a4d2d786d77e326d57e6353c1872ff5ce2"
+    ],
+    "disc_serials": [
+      "SCES-01312"
+    ],
+    "sizes": [
+      379876224
+    ],
+    "filenames": [
+      "Devil Dice (Europe) (En,Fr,De,Es,It).cue",
+      "Devil Dice (Europe) (En,Fr,De,Es,It) (Track 01).bin"
+    ],
+    "track_counts": [
+      12
+    ],
+    "require_cue": true
+  },
+  "bios_identity": {
+    "required": true,
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN",
+      "scph5552.bin"
+    ],
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ]
+  },
+  "romm": {
+    "platforms": [
+      "ps",
+      "psx",
+      "ps1"
+    ]
+  }
+}
